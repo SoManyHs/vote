@@ -1,6 +1,6 @@
 # The manifest for the "vote" service.
 # Read the full specification for the "Load Balanced Web Service" type at:
-#  https://github.com/aws/copilot-cli/wiki/Manifests#load-balanced-web-svc
+#  https://aws.github.io/copilot-cli/docs/manifest/lb-web-service/
 
 # Your service name will be used in naming your resources like log groups, ECS services, etc.
 name: vote
@@ -8,15 +8,15 @@ name: vote
 type: Load Balanced Web Service
 
 image:
-  # Docker build arguments. You can specify additional overrides here. Supported: dockerfile, context, args
-  build: Dockerfile
+  # Docker build arguments. You can specify additional overrides here. Supported: dockerfile, context, args.
+  build: ./Dockerfile
   # Port exposed through your container to route traffic to it.
   port: 8080
 
 http:
   # Requests to this path will be forwarded to your service. 
   # To match all requests you can use the "/" path. 
-  path: 'vote'
+  path: '/'
   # You can specify a custom health check path. The default is "/"
   # healthcheck: '/'
   # You can enable sticky sessions.
